@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>SURVEY FORM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aladin&family=Fleur+De+Leah&display=swap" rel="stylesheet">
+  <style>
+    body{
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center;
+      min-height: 100vh;
+      font-family: "Aladin", sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    h1, p {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family:"Aladin", serif ;
+    }
+    .aladin-regular {
+  font-family: "Aladin", serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+form{
+  max-width: 600px;
+  margin: 50px auto;
+  width:100%;
+  padding: 20px;
+  border: 1px solid orchid;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.993);
+  text-align: left;
+}
+input, textarea, select{
+  margin-bottom: 15px;
+  border: 1px solid orchid;
+  width: 80%;
+  padding: 10px;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+button{
+  background-color: blue;
+  color: pink;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: pink;
+}
+fieldset {
+    text-align: left;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 0;
+}
+  .option-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .input-field {
+    margin-right: 10px;
+    transform: scale(1.2);
+  }
+</style>
+
+  </style>
+  </head>
+  <body>
+    <h1 id="title">Survey (for research purposes of course)</h1>
+    <p id="description">Thank you for taking the time to fill this survey that is indeed, for research purposes.</p>
+      <form action="https://formspree.io/f/xnnnopwg" method="POST">
+        <input type="hidden" name="_debug" value="true">
+      <label id="name-label">Name:<input id="name" type="text" name="name" required placeholder="e.g Liam"><br>
+        <label id="email-label">Email<input id="email" type="email" name="email" required placeholder="e.g iamhot@real.com"><br>
+        <label id="number-label">Age:<input id="number" type="number" name="age" min="18" max="35" placeholder="e.g 50"><br>
+        <label for="dropdown">Pick a day<select id="dropdown" name="day" required>
+          <option value="option 1"disabled>Choose</option>
+          <option value="option 2">Wednesday</option>
+          <option value="option 3">Friday</option>
+          <option value="option 4">Saturday</option></select><br>
+          <fieldset>
+            <p>Are you free next week?</p>
+            <label style="display: flex;align-items: center; margin-bottom: 10px;">
+              <input name="free" type="radio" value="yes" class="input-field" style="margin-right: 10px;">Yes
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input name="free" type="radio" value="no" class="input-field" style="margin-right: 10px;">No
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input name="free" type="radio" value="maybe" class="input-field" style="margin-right: 10px;">Maybe (stop playing)
+            </label>
+          </fieldset>
+          <fieldset>
+            <p>Select your preference</p>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="restaurant" class="input-field" name="preference" style="margin-right: 10px;">Restaurant
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="picnic" class="input-field" name="preference" style="margin-right: 10px;">Picnic
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="art gallery" class="input-field" name="preference" style="margin-right: 10px;">Art Gallery
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="clubbing" class="input-field" name="preference" style="margin-right: 10px;">Clubbing
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="theatre" class="input-field" name="preference" style="margin-right: 10px;">Theatre
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="sip n' paint" class="input-field" name="preference" style="margin-right: 10px;">Sip n' paint
+            </label>
+            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+              <input type="checkbox" value="other" class="input-field" name="preference" style="margin-right: 10px;">Other (specify)
+            </label>
+          </fieldset>
+          <label for="comments">Any additional comments?</label><br>
+          <textarea id="comments" name="comments" rows="5" cols="50" placeholder="Yes, I'm asking you out"></textarea><br>
+          <input id="submit" type="submit" value="submit"></form>
+          <script>
+            const form = document.querySelector('form');
+form.addEventListener('submit', function (e) {
+  alert('Thank you for your submission Precious');
+  setTimeout(() => form.reset(), 500);
+});
+
+          </script>
